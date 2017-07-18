@@ -1,8 +1,11 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'org.greenrobot.greendao'
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
+
+
+
     defaultConfig {
         applicationId "sj.com.voiceclock"
         minSdkVersion 24
@@ -17,6 +20,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    greendao {
+        schemaVersion 1
+        daoPackage 'sj.com.voiceclock'
+        targetGenDir 'src/main/java'
+    }
 }
 
 dependencies {
@@ -27,4 +36,22 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.3.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.0-beta3'
     testCompile 'junit:junit:4.12'
+
+    // RxJava
+    compile 'io.reactivex:rxandroid:1.1.0'
+    compile 'io.reactivex:rxjava:1.1.0'
+
+    //retrofit
+    compile 'com.squareup.retrofit2:retrofit:2.0.0-beta4'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.0-beta4'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.6.0'
+
+    compile 'com.alibaba:fastjson:1.2.9'
+    compile 'org.greenrobot:greendao:3.2.0'
+    compile 'com.jakewharton:butterknife:7.0.0'
+    compile 'com.facebook.fresco:fresco:0.12.0'
+
+
+
 }
