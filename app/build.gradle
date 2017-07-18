@@ -23,7 +23,7 @@ android {
 
     greendao {
         schemaVersion 1
-        daoPackage 'sj.com.voiceclock'
+        daoPackage 'sj.com.voiceclock.greendao.gen'
         targetGenDir 'src/main/java'
     }
 }
