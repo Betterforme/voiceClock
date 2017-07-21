@@ -5,5 +5,5 @@ package sj.com.voiceclock.model.IModel;
  */
 
 public interface ILogin {
-    public void login();
+    public void login(String u,String p);
 }
