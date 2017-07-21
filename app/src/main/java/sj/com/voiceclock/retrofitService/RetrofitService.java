@@ -1,4 +1,4 @@
-package sj.com.voiceclock.net;
+package sj.com.voiceclock.retrofitService;
 
 
 import okhttp3.OkHttpClient;

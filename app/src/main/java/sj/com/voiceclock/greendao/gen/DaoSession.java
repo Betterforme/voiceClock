@@ -8,7 +8,7 @@ import org.greenrobot.greendao.database.Database;
 import org.greenrobot.greendao.identityscope.IdentityScopeType;
 import org.greenrobot.greendao.internal.DaoConfig;
 
-import sj.com.voiceclock.model.entity.entity.User;
+import sj.com.voiceclock.model.Bean.User;
 
 import sj.com.voiceclock.greendao.gen.UserDao;
 
