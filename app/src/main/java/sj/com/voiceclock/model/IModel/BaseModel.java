@@ -1,7 +1,7 @@
 package sj.com.voiceclock.model.IModel;
 
 import rx.Subscriber;
-import sj.com.voiceclock.model.Bean.User;
+import sj.com.voiceclock.VCInterface;
 import sj.com.voiceclock.retrofitService.excuter.JobExecutor;
 import sj.com.voiceclock.retrofitService.excuter.RxJavaExecuter;
 import sj.com.voiceclock.retrofitService.excuter.UIThread;
@@ -12,14 +12,14 @@ import sj.com.voiceclock.retrofitService.excuter.UIThread;
 
 public abstract class BaseModel {
     protected RxJavaExecuter rxJavaExecuter;
-    protected UserLoginSubscriber subscriber;
+    VCInterface vcInterface;
     public BaseModel(){
         this.rxJavaExecuter = new RxJavaExecuter(JobExecutor.instance(), UIThread.instance());
     }
 
     public abstract void destroy();
 
-    private class UserLoginSubscriber extends Subscriber<User> {
+    public class CommonSubscriber<T> extends Subscriber<T> {
         @Override
         public void onCompleted() {
 
@@ -27,12 +27,14 @@ public abstract class BaseModel {
 
         @Override
         public void onError(Throwable e) {
-
+            if(vcInterface!=null)
+                vcInterface.error(e);
         }
 
         @Override
-        public void onNext(User user) {
-
+        public void onNext(T user) {
+            if(vcInterface!=null)
+                vcInterface.success(user);
         }
     }
 }

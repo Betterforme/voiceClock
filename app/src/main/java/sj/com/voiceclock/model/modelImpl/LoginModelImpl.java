@@ -1,6 +1,5 @@
 package sj.com.voiceclock.model.modelImpl;
 
-import rx.Subscriber;
 import sj.com.voiceclock.model.Bean.User;
 import sj.com.voiceclock.model.IModel.BaseModel;
 import sj.com.voiceclock.model.IModel.ILogin;
@@ -19,7 +18,7 @@ public class LoginModelImpl extends BaseModel implements ILogin {
     public void login(String username,String password) {
         rxJavaExecuter.execute(
                 userApiRespository.userLogin(username,password)
-                , loadMoreCookMenuByIDSubscriber = new LoadMoreCookMenuByIDSubscriber()
+                , new CommonSubscriber<User>()
         );
     }
 
@@ -27,7 +26,6 @@ public class LoginModelImpl extends BaseModel implements ILogin {
     public void destroy() {
 
     }
-
 
 
 }
