@@ -50,4 +50,6 @@ dependencies {
     compile 'com.facebook.fresco:fresco:0.12.0'
     compile files('D:/android-pickers-master/VoiceClock/libs/Sunflower.jar')
     compile files('D:/android-pickers-master/VoiceClock/libs/Msc.jar')
+    compile files('D:/voiceclock/voiceClock/libs/Msc.jar')
+    compile files('D:/voiceclock/voiceClock/libs/Sunflower.jar')
 }

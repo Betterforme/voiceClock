@@ -1,5 +1,7 @@
 package sj.com.voiceclock.model.modelImpl;
 
+import com.iflytek.cloud.thirdparty.T;
+
 import sj.com.voiceclock.model.Bean.User;
 import sj.com.voiceclock.model.IModel.BaseModel;
 import sj.com.voiceclock.model.IModel.ILogin;
@@ -27,5 +29,18 @@ public class LoginModelImpl extends BaseModel implements ILogin {
 
     }
 
+    @Override
+    public void iOnCompleted() {
 
+    }
+
+    @Override
+    public void iOnNext(T t) {
+
+    }
+
+    @Override
+    public void iOnError(Throwable e) {
+
+    }
 }

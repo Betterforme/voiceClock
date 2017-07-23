@@ -8,12 +8,13 @@ import sj.com.voiceclock.ui.ILoginView;
  * Created by Administrator on 2017/7/21 0021.
  */
 
-public class UserLoginPresent implements VCInterface{
+public class UserLoginPresent extends BasePresenter implements VCInterface{
 
 
     public LoginModelImpl loginModel;
     public ILoginView view;
     public UserLoginPresent(ILoginView view){
+        super();
         loginModel = new LoginModelImpl();
         this.view = view;
     }
@@ -30,5 +31,10 @@ public class UserLoginPresent implements VCInterface{
     @Override
     public void error(Object e) {
 
+    }
+
+    @Override
+    public void destroy() {
+        loginModel.destroy();
     }
 }

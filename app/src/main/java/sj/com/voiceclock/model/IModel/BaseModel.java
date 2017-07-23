@@ -1,5 +1,8 @@
 package sj.com.voiceclock.model.IModel;
 
+
+import com.iflytek.cloud.thirdparty.T;
+
 import rx.Subscriber;
 import sj.com.voiceclock.VCInterface;
 import sj.com.voiceclock.retrofitService.excuter.JobExecutor;
@@ -22,19 +25,21 @@ public abstract class BaseModel {
     public class CommonSubscriber<T> extends Subscriber<T> {
         @Override
         public void onCompleted() {
-
+            iOnCompleted();
         }
 
         @Override
         public void onError(Throwable e) {
-            if(vcInterface!=null)
-                vcInterface.error(e);
+            iOnError(e);
         }
 
         @Override
-        public void onNext(T user) {
-            if(vcInterface!=null)
-                vcInterface.success(user);
+        public void onNext(T t) {
+            iOnNext((com.iflytek.cloud.thirdparty.T)t);
         }
     }
+
+    public abstract void iOnCompleted();
+    public abstract void iOnNext(T t);
+    public abstract void iOnError(Throwable e);
 }
