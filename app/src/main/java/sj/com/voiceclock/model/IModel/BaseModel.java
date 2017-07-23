@@ -1,10 +1,9 @@
 package sj.com.voiceclock.model.IModel;
 
 import rx.Subscriber;
-import sj.com.voiceclock.VCInterface;
-import sj.com.voiceclock.retrofitService.excuter.JobExecutor;
-import sj.com.voiceclock.retrofitService.excuter.RxJavaExecuter;
-import sj.com.voiceclock.retrofitService.excuter.UIThread;
+import sj.com.voiceclock.zretrofitService.excuter.JobExecutor;
+import sj.com.voiceclock.zretrofitService.excuter.RxJavaExecuter;
+import sj.com.voiceclock.zretrofitService.excuter.UIThread;
 
 /**
  * Created by Administrator on 2017/7/21 0021.
@@ -12,7 +11,6 @@ import sj.com.voiceclock.retrofitService.excuter.UIThread;
 
 public abstract class BaseModel {
     protected RxJavaExecuter rxJavaExecuter;
-    VCInterface vcInterface;
     public BaseModel(){
         this.rxJavaExecuter = new RxJavaExecuter(JobExecutor.instance(), UIThread.instance());
     }

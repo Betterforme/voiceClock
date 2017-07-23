@@ -1,8 +1,9 @@
 package sj.com.voiceclock.model.modelImpl;
 
 
+import com.iflytek.cloud.thirdparty.T;
+
 import sj.com.voiceclock.VCInterface;
-import sj.com.voiceclock.model.Bean.User;
 import sj.com.voiceclock.model.IModel.BaseModel;
 import sj.com.voiceclock.model.IModel.ILogin;
 import sj.com.voiceclock.model.api.UserApiRespository;
@@ -14,6 +15,7 @@ import sj.com.voiceclock.model.api.UserApiRespository;
 public class LoginModelImpl extends BaseModel implements ILogin {
 
     public VCInterface vc;
+    public CommonSubscriber subscriber;
     public LoginModelImpl(VCInterface vc){
         this.vc = vc;
     }
@@ -24,13 +26,14 @@ public class LoginModelImpl extends BaseModel implements ILogin {
     public void login(String username,String password) {
         rxJavaExecuter.execute(
                 userApiRespository.userLogin(username,password)
-                , new CommonSubscriber<User>()
+                , subscriber = new CommonSubscriber<T>()
         );
     }
 
     @Override
     public void destroy() {
-
+        if(subscriber!=null)
+            subscriber.unsubscribe();
     }
 
     @Override
@@ -40,11 +43,11 @@ public class LoginModelImpl extends BaseModel implements ILogin {
 
     @Override
     public void iOnNext(Object t) {
-
+        vc.success("登陆成功");
     }
 
     @Override
     public void iOnError(Throwable e) {
-
+        vc.error(e.getMessage()+"");
     }
 }

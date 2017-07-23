@@ -1,4 +1,4 @@
-package sj.com.voiceclock.sutil;
+package sj.com.voiceclock.utils;
 
 import android.os.StrictMode;
 import android.util.Log;

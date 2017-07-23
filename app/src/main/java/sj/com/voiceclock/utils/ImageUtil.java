@@ -1,4 +1,4 @@
-package sj.com.voiceclock.sutil;
+package sj.com.voiceclock.utils;
 
 import android.content.Context;
 import android.graphics.Bitmap;

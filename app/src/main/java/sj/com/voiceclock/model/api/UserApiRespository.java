@@ -3,7 +3,7 @@ package sj.com.voiceclock.model.api;
 import retrofit2.http.Query;
 import rx.Observable;
 import sj.com.voiceclock.model.Bean.Data;
-import sj.com.voiceclock.retrofitService.RetrofitService;
+import sj.com.voiceclock.zretrofitService.RetrofitService;
 
 /**
  * Created by Administrator on 2017/7/21 0021.

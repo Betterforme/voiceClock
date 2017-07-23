@@ -1,4 +1,4 @@
-package sj.com.voiceclock.ui;
+package sj.com.voiceclock.IView;
 
 /**
  * Created by Administrator on 2017/7/21 0021.

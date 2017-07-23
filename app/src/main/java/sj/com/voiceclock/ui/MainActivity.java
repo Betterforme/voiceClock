@@ -5,10 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.iflytek.sunflower.FlowerCollector;
 
+import sj.com.voiceclock.IView.ILoginView;
 import sj.com.voiceclock.R;
 import sj.com.voiceclock.presenter.UserLoginPresent;
 
-public class MainActivity extends AppCompatActivity implements ILoginView{
+public class MainActivity extends AppCompatActivity implements ILoginView {
 
 
     UserLoginPresent present;
