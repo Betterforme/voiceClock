@@ -1,8 +1,5 @@
 package sj.com.voiceclock.model.IModel;
 
-
-import com.iflytek.cloud.thirdparty.T;
-
 import rx.Subscriber;
 import sj.com.voiceclock.VCInterface;
 import sj.com.voiceclock.retrofitService.excuter.JobExecutor;
@@ -35,11 +32,11 @@ public abstract class BaseModel {
 
         @Override
         public void onNext(T t) {
-            iOnNext((com.iflytek.cloud.thirdparty.T)t);
+            iOnNext(t);
         }
     }
 
     public abstract void iOnCompleted();
-    public abstract void iOnNext(T t);
+    public abstract void iOnNext(Object t);
     public abstract void iOnError(Throwable e);
 }

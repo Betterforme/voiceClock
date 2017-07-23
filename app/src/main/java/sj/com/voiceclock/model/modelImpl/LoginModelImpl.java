@@ -1,7 +1,7 @@
 package sj.com.voiceclock.model.modelImpl;
 
-import com.iflytek.cloud.thirdparty.T;
 
+import sj.com.voiceclock.VCInterface;
 import sj.com.voiceclock.model.Bean.User;
 import sj.com.voiceclock.model.IModel.BaseModel;
 import sj.com.voiceclock.model.IModel.ILogin;
@@ -13,6 +13,10 @@ import sj.com.voiceclock.model.api.UserApiRespository;
 
 public class LoginModelImpl extends BaseModel implements ILogin {
 
+    public VCInterface vc;
+    public LoginModelImpl(VCInterface vc){
+        this.vc = vc;
+    }
 
     public UserApiRespository userApiRespository  = UserApiRespository.getInstance();
 
@@ -35,7 +39,7 @@ public class LoginModelImpl extends BaseModel implements ILogin {
     }
 
     @Override
-    public void iOnNext(T t) {
+    public void iOnNext(Object t) {
 
     }
 

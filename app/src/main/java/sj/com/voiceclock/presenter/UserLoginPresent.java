@@ -15,7 +15,7 @@ public class UserLoginPresent extends BasePresenter implements VCInterface{
     public ILoginView view;
     public UserLoginPresent(ILoginView view){
         super();
-        loginModel = new LoginModelImpl();
+        loginModel = new LoginModelImpl(this);
         this.view = view;
     }
 

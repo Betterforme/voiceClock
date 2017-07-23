@@ -4,7 +4,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Query;
 import rx.Observable;
 import sj.com.voiceclock.constants.Constants;
-import sj.com.voiceclock.model.Bean.User;
+import sj.com.voiceclock.model.Bean.Data;
 
 /**
  * Created by Administrator on 2017/7/21 0021.
@@ -12,9 +12,9 @@ import sj.com.voiceclock.model.Bean.User;
 
 public interface UserApi {
     @GET(Constants.User_Login)
-    Observable<User> userLogin(@Query("username") String username, @Query("password") String password);
+    Observable<Data> userLogin(@Query("username") String username, @Query("password") String password);
     @GET(Constants.User_Regist)
-    Observable<User> userRegist(@Query("username") String username,
+    Observable<Data> userRegist(@Query("username") String username,
                                 @Query("password") String password,
                                 @Query("city") String city,
                                 @Query("age") String age,
