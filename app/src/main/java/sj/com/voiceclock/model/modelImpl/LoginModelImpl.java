@@ -43,7 +43,7 @@ public class LoginModelImpl extends BaseModel implements ILogin {
 
     @Override
     public void iOnNext(Object t) {
-        vc.success("登陆成功");
+        vc.success(t);
     }
 
     @Override

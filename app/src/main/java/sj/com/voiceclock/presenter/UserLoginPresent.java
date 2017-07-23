@@ -1,9 +1,10 @@
 package sj.com.voiceclock.presenter;
 
+import sj.com.voiceclock.IView.ILoginView;
 import sj.com.voiceclock.VCInterface;
+import sj.com.voiceclock.model.Bean.Data;
 import sj.com.voiceclock.model.IModel.ILogin;
 import sj.com.voiceclock.model.modelImpl.LoginModelImpl;
-import sj.com.voiceclock.IView.ILoginView;
 
 /**
  * Created by Administrator on 2017/7/21 0021.
@@ -26,7 +27,11 @@ public class UserLoginPresent extends BasePresenter implements VCInterface,ILogi
 
     @Override
     public void success(Object o) {
-        view.initView();
+        if(((Data)o).getResultCode().equals("0"))
+            view.initView();
+        else {
+            view.netError(((Data)o).getResultObject().toString());
+        }
     }
 
     @Override

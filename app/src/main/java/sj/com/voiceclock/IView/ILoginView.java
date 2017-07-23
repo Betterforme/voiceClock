@@ -6,4 +6,5 @@ package sj.com.voiceclock.IView;
 
 public interface ILoginView {
     public void initView();
+    public void netError(String s);
 }
