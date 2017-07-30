@@ -116,6 +116,7 @@ public class LoginActivity extends BaseActivity implements ILoginView {
             case R.id.rl_weibo:
                 break;
             case R.id.rl_login:
+                toAcitivty(Main2Activity.class);
                 present.login("liuyu", "497045289@qq.com");
                 slLoading.setVisibility(View.VISIBLE);
                 ivRight.setVisibility(View.INVISIBLE);
