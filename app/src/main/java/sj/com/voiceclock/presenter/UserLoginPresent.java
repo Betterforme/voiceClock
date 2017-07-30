@@ -35,8 +35,8 @@ public class UserLoginPresent extends BasePresenter implements VCInterface,ILogi
     }
 
     @Override
-    public void error(Object e) {
-
+    public void error(String e) {
+        view.netError(e+"");
     }
 
     @Override

@@ -6,5 +6,5 @@ package sj.com.voiceclock;
 
 public interface VCInterface {
     public void success(Object o);
-    public void error(Object e);
+    public void error(String e);
 }
