@@ -42,5 +42,6 @@ public class UserLoginPresent extends BasePresenter implements VCInterface,ILogi
     @Override
     public void destroy() {
         loginModel.destroy();
+        view = null;
     }
 }

@@ -118,9 +118,7 @@ public class LoginActivity extends BaseActivity implements ILoginView {
             case R.id.rl_login:
                 toAcitivty(Main2Activity.class);
                 present.login("liuyu", "497045289@qq.com");
-                slLoading.setVisibility(View.VISIBLE);
-                ivRight.setVisibility(View.INVISIBLE);
-                ivWhite.setVisibility(View.INVISIBLE);
+                setLoading();
                 break;
             case R.id.rl_about_us:
                 break;
@@ -129,6 +127,17 @@ public class LoginActivity extends BaseActivity implements ILoginView {
         }
     }
 
+    public void setLoading(){
+        slLoading.setVisibility(View.VISIBLE);
+        ivRight.setVisibility(View.INVISIBLE);
+        ivWhite.setVisibility(View.INVISIBLE);
+    }
+
+    public void setLoadingFail(){
+        slLoading.setVisibility(View.INVISIBLE);
+        ivRight.setVisibility(View.VISIBLE);
+        ivWhite.setVisibility(View.VISIBLE);
+    }
     private void toMainActivity(View v) {
         CircularAnim.fullActivity(LoginActivity.this, v)
                 .colorOrImageRes(R.color.colorPrimary)
@@ -143,5 +152,6 @@ public class LoginActivity extends BaseActivity implements ILoginView {
     @Override
     public void netError(String s) {
         toast(s+"");
+        setLoadingFail();
     }
 }
